@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class ServerMain
 {
-    private static final String CLIENT_START_COMMAND = "java -jar ../_1611-client/target/client.jar";
+    private static final String CLIENT_START_COMMAND = "java -jar ../_1611-client/target/client.jar -port 5051";
     private static final int CLIENT_START_DELAY_SEC = 5;
 
     public static void main( String[] args ) throws Exception {
@@ -42,7 +42,6 @@ public class ServerMain
 
     private void startClient(ScheduledExecutorService executorService) {
         executorService.schedule(() -> {
-
             try {
                 new ProcessRunnerImpl().start(CLIENT_START_COMMAND);
             } catch (IOException e) {

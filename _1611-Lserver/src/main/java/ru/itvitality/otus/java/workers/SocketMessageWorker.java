@@ -92,7 +92,7 @@ public class SocketMessageWorker implements MessageWorker {
 
         JsonParser parser = new JsonParser();
         JsonObject jsonObject = (JsonObject) parser.parse(json);
-        String className = String.valueOf(jsonObject.get(Message.CLASS_NAME_VARIABLE));
+        //String className = String.valueOf(jsonObject.get(Message.CLASS_NAME_VARIABLE));
         Class<?> messageClass = PingMessage.class;
 
         return (Message) new Gson().fromJson(json, messageClass);
