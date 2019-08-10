@@ -14,6 +14,12 @@ public class ProcessRunnerImpl implements ProcessRunner {
     @Override
     public void start(String command) throws IOException {
         process = runProcess(command);
+        try {
+            Thread.sleep(1000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("is proccess status: " + process.isAlive());
     }
 
     @Override
@@ -33,6 +39,9 @@ public class ProcessRunnerImpl implements ProcessRunner {
 
         StreamListener output = new StreamListener(process.getInputStream(), "OUTPUT");
         output.start();
+
+
+        System.out.println(process.isAlive());
 
         return process;
     }

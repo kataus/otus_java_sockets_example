@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class ServerMain
 {
-    private static final String CLIENT_START_COMMAND = "java -jar ../_1611-client/target/client.jar -port 5051";
+    private static final String CLIENT_START_COMMAND = "java -jar ../_1611-client/target/client-jar-with-dependencies.jar -port 5051";
     private static final int CLIENT_START_DELAY_SEC = 5;
 
     public static void main( String[] args ) throws Exception {
